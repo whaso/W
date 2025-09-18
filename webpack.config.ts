@@ -276,7 +276,11 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
           }),
         ]
     )
+<<<<<<< HEAD
       .concat({ apply: watch_it }, new VueLoaderPlugin())
+=======
+      .concat({ apply: watch_it }, new VueLoaderPlugin(), new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }))
+>>>>>>> ffd4084071b1bcc5c10d43ca5a0ee996ddbcf06c
       .concat(
         should_obfuscate
           ? [
